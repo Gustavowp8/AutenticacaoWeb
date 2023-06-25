@@ -1,0 +1,26 @@
+﻿@model WebTeste.Models.Usuario;
+
+@if(!string.IsNullOrEmpty(ViewBag.Erro))
+{
+    <h4 style="color:red;">
+        @ViewBag.Erro.ToString()
+    </h4>
+}
+
+@using(Html.BeginForm("Login", "Home", FormMethod.Post, new {autocomplete="off"}))
+{
+
+    <label>Nome: </label><br />
+    @Html.TextBoxFor(x => x.Nome) <br />
+
+    <label>Senha: </label><br />
+    @Html.TextBoxFor(x => x.Senha) <br />
+
+    <label>Cargo: </label>
+    <br />
+    @Html.TextBoxFor(x => x.Cargo)
+    <br /> <br />
+
+    <button type="submit">Enviar</button>
+
+}
